@@ -1,0 +1,110 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:         #0d1117;
+  --surface:    #161b22;
+  --border:     #21262d;
+  --text:       #e6edf3;
+  --text-muted: #7d8590;
+  --accent:     #4fc3f7;
+  --ok:         #3fb950;
+  --warn:       #e3b341;
+  --danger:     #f85149;
+}
+
+html, body { height: 100%; background: var(--bg); color: var(--text); }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.4;
+}
+#app { height: 100%; display: flex; flex-direction: column; }
+
+/* ── Layout ─────────────────────────────────────────────── */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.75rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  min-height: 40px;
+}
+
+.header-title  { font-weight: 700; font-size: 0.9rem; letter-spacing: 0.02em; }
+.header-mission { font-size: 0.78rem; color: var(--text-muted); }
+.header-vehicle { font-size: 0.78rem; color: var(--text-muted); margin-left: auto; }
+
+.staleness-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--text-muted);
+  flex-shrink: 0;
+  transition: background 0.4s, box-shadow 0.4s;
+}
+.staleness-dot.fresh    { background: var(--ok);     box-shadow: 0 0 6px var(--ok); }
+.staleness-dot.stale    { background: var(--warn);   box-shadow: 0 0 6px var(--warn); }
+.staleness-dot.critical { background: var(--danger); box-shadow: 0 0 6px var(--danger); }
+
+.error-banner {
+  background: rgba(248,81,73,0.12);
+  border-bottom: 1px solid var(--danger);
+  color: var(--danger);
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* ── Two-pane main ──────────────────────────────────────── */
+
+.main-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 310px;
+  overflow: hidden;
+}
+
+.map-section {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.panel-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 0.7rem;
+  overflow-y: auto;
+  background: var(--bg);
+  border-left: 1px solid var(--border);
+}
+
+/* ── Mobile ─────────────────────────────────────────────── */
+
+@media (max-width: 680px) {
+  .app        { height: auto; min-height: 100vh; overflow-y: auto; }
+  .main-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: 360px auto;
+    overflow: visible;
+    height: auto;
+  }
+  .map-section  { grid-row: 1; height: 360px; }
+  .panel-section {
+    grid-row: 2;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    overflow: visible;
+    padding-bottom: 1rem;
+  }
+}

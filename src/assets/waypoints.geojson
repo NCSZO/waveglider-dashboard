@@ -1,0 +1,1525 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -125.27838,
+          48.80082
+        ]
+      },
+      "properties": {
+        "wp_number": 1,
+        "name": "Mission Start - June 22  2026",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -127.19183,
+          48.18419
+        ]
+      },
+      "properties": {
+        "wp_number": 110,
+        "name": "GNSSA-01",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -127.15555,
+          48.19449
+        ]
+      },
+      "properties": {
+        "wp_number": 111,
+        "name": "GNSSA-01-1A",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -127.19109,
+          48.15788
+        ]
+      },
+      "properties": {
+        "wp_number": 112,
+        "name": "GNSSA-01-2A",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -127.23119,
+          48.18414
+        ]
+      },
+      "properties": {
+        "wp_number": 113,
+        "name": "GNSSA-01-3N",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -127.16538,
+          48.55736
+        ]
+      },
+      "properties": {
+        "wp_number": 120,
+        "name": "GNSSA-02",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -127.19774,
+          48.56592
+        ]
+      },
+      "properties": {
+        "wp_number": 121,
+        "name": "GNSSA-02-01",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -127.16061,
+          48.53445
+        ]
+      },
+      "properties": {
+        "wp_number": 122,
+        "name": "GNSSA-02-02",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -127.13805,
+          48.57169
+        ]
+      },
+      "properties": {
+        "wp_number": 123,
+        "name": "GNSSA-02-03",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.84296,
+          48.71481
+        ]
+      },
+      "properties": {
+        "wp_number": 130,
+        "name": "GNSSA-03",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.82472,
+          48.71864
+        ]
+      },
+      "properties": {
+        "wp_number": 131,
+        "name": "GNSSA-03-01",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.85701,
+          48.72341
+        ]
+      },
+      "properties": {
+        "wp_number": 132,
+        "name": "GNSSA-03-02",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.84771,
+          48.70254
+        ]
+      },
+      "properties": {
+        "wp_number": 133,
+        "name": "GNSSA-03-03",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.43582,
+          48.27082
+        ]
+      },
+      "properties": {
+        "wp_number": 140,
+        "name": "GNSSA-04",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.40902,
+          48.27626
+        ]
+      },
+      "properties": {
+        "wp_number": 141,
+        "name": "GNSSA-04-01",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.44208,
+          48.25259
+        ]
+      },
+      "properties": {
+        "wp_number": 142,
+        "name": "GNSSA-04-02",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.45612,
+          48.2837
+        ]
+      },
+      "properties": {
+        "wp_number": 143,
+        "name": "GNSSA-04-03",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.1744,
+          48.42763
+        ]
+      },
+      "properties": {
+        "wp_number": 150,
+        "name": "GNSSA-05",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.17644,
+          48.43095
+        ]
+      },
+      "properties": {
+        "wp_number": 151,
+        "name": "GNSSA-05-01",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.16907,
+          48.42717
+        ]
+      },
+      "properties": {
+        "wp_number": 152,
+        "name": "GNSSA-05-02",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.17766,
+          48.42478
+        ]
+      },
+      "properties": {
+        "wp_number": 153,
+        "name": "GNSSA-05-03",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -127.4684,
+          48.84813
+        ]
+      },
+      "properties": {
+        "wp_number": 160,
+        "name": "GNSSA-06",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -127.45442,
+          48.82995
+        ]
+      },
+      "properties": {
+        "wp_number": 161,
+        "name": "GNSSA-06-01",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -127.49925,
+          48.84917
+        ]
+      },
+      "properties": {
+        "wp_number": 162,
+        "name": "GNSSA-06-02",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -127.4519,
+          48.86536
+        ]
+      },
+      "properties": {
+        "wp_number": 163,
+        "name": "GNSSA-06-03",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -127.24511,
+          48.96327
+        ]
+      },
+      "properties": {
+        "wp_number": 170,
+        "name": "GNSSA-07",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -127.26772,
+          48.95252
+        ]
+      },
+      "properties": {
+        "wp_number": 171,
+        "name": "GNSSA-07-01",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -127.24755,
+          48.98157
+        ]
+      },
+      "properties": {
+        "wp_number": 172,
+        "name": "GNSSA-07-02",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -127.21952,
+          48.95597
+        ]
+      },
+      "properties": {
+        "wp_number": 173,
+        "name": "GNSSA-07-03",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.82472,
+          48.71864
+        ]
+      },
+      "properties": {
+        "wp_number": 180,
+        "name": "GNSSA-03-01",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.82821,
+          48.71465
+        ]
+      },
+      "properties": {
+        "wp_number": 181,
+        "name": "GNSSA-03-01_shape_4",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.83169,
+          48.71864
+        ]
+      },
+      "properties": {
+        "wp_number": 182,
+        "name": "GNSSA-03-01_shape_5",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.82821,
+          48.72263
+        ]
+      },
+      "properties": {
+        "wp_number": 183,
+        "name": "GNSSA-03-01_shape_6",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.82124,
+          48.72263
+        ]
+      },
+      "properties": {
+        "wp_number": 184,
+        "name": "GNSSA-03-01_shape_1",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.81776,
+          48.71864
+        ]
+      },
+      "properties": {
+        "wp_number": 185,
+        "name": "GNSSA-03-01_shape_2",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.82124,
+          48.71464
+        ]
+      },
+      "properties": {
+        "wp_number": 186,
+        "name": "GNSSA-03-01_shape_3",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.82821,
+          48.71465
+        ]
+      },
+      "properties": {
+        "wp_number": 187,
+        "name": "GNSSA-03-01_shape_3",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.84771,
+          48.70254
+        ]
+      },
+      "properties": {
+        "wp_number": 188,
+        "name": "GNSSA-03-03",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.85119,
+          48.70653
+        ]
+      },
+      "properties": {
+        "wp_number": 189,
+        "name": "GNSSA-03-03_shape_6",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.84424,
+          48.70653
+        ]
+      },
+      "properties": {
+        "wp_number": 190,
+        "name": "GNSSA-03-03_shape_1",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.84076,
+          48.70254
+        ]
+      },
+      "properties": {
+        "wp_number": 191,
+        "name": "GNSSA-03-03_shape_2",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.84424,
+          48.69856
+        ]
+      },
+      "properties": {
+        "wp_number": 192,
+        "name": "GNSSA-03-03_shape_3",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.85119,
+          48.69856
+        ]
+      },
+      "properties": {
+        "wp_number": 193,
+        "name": "GNSSA-03-03_shape_4",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.85467,
+          48.70254
+        ]
+      },
+      "properties": {
+        "wp_number": 194,
+        "name": "GNSSA-03-03_shape_5",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.85119,
+          48.70653
+        ]
+      },
+      "properties": {
+        "wp_number": 195,
+        "name": "GNSSA-03-03_shape_6",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.85701,
+          48.72341
+        ]
+      },
+      "properties": {
+        "wp_number": 196,
+        "name": "GNSSA-03-02",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.85006,
+          48.7234
+        ]
+      },
+      "properties": {
+        "wp_number": 197,
+        "name": "GNSSA-03-02_shape_2",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.85353,
+          48.71943
+        ]
+      },
+      "properties": {
+        "wp_number": 198,
+        "name": "GNSSA-03-02_shape_3",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.86047,
+          48.71943
+        ]
+      },
+      "properties": {
+        "wp_number": 199,
+        "name": "GNSSA-03-02_shape_4",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.86394,
+          48.7234
+        ]
+      },
+      "properties": {
+        "wp_number": 200,
+        "name": "GNSSA-03-02_shape_5",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.86047,
+          48.72738
+        ]
+      },
+      "properties": {
+        "wp_number": 201,
+        "name": "GNSSA-03-02_shape_6",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.85353,
+          48.72738
+        ]
+      },
+      "properties": {
+        "wp_number": 202,
+        "name": "GNSSA-03-02_shape_1",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.85006,
+          48.7234
+        ]
+      },
+      "properties": {
+        "wp_number": 203,
+        "name": "GNSSA-03-02_shape_1",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.82472,
+          48.71864
+        ]
+      },
+      "properties": {
+        "wp_number": 204,
+        "name": "GNSSA-03-01",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.843,
+          48.71482
+        ]
+      },
+      "properties": {
+        "wp_number": 205,
+        "name": "GNSSA-03_toa_centre",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.83984,
+          48.72413
+        ]
+      },
+      "properties": {
+        "wp_number": 206,
+        "name": "GNSSA-03_outer_1",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.83855,
+          48.7244
+        ]
+      },
+      "properties": {
+        "wp_number": 207,
+        "name": "GNSSA-03_round_1",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.83884,
+          48.72352
+        ]
+      },
+      "properties": {
+        "wp_number": 208,
+        "name": "GNSSA-03_round_2",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.84014,
+          48.72325
+        ]
+      },
+      "properties": {
+        "wp_number": 209,
+        "name": "GNSSA-03_round_3",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.843,
+          48.71482
+        ]
+      },
+      "properties": {
+        "wp_number": 210,
+        "name": "GNSSA-03_toa_centre",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.82472,
+          48.71864
+        ]
+      },
+      "properties": {
+        "wp_number": 211,
+        "name": "GNSSA-03_outer_2",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.82372,
+          48.71803
+        ]
+      },
+      "properties": {
+        "wp_number": 212,
+        "name": "GNSSA-03_round_4",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.82502,
+          48.71776
+        ]
+      },
+      "properties": {
+        "wp_number": 213,
+        "name": "GNSSA-03_round_5",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.82602,
+          48.71837
+        ]
+      },
+      "properties": {
+        "wp_number": 214,
+        "name": "GNSSA-03_round_6",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.843,
+          48.71482
+        ]
+      },
+      "properties": {
+        "wp_number": 215,
+        "name": "GNSSA-03_toa_centre",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.83284,
+          48.70847
+        ]
+      },
+      "properties": {
+        "wp_number": 216,
+        "name": "GNSSA-03_outer_3",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.83316,
+          48.70759
+        ]
+      },
+      "properties": {
+        "wp_number": 217,
+        "name": "GNSSA-03_round_7",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.83415,
+          48.70821
+        ]
+      },
+      "properties": {
+        "wp_number": 218,
+        "name": "GNSSA-03_round_8",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.83383,
+          48.70909
+        ]
+      },
+      "properties": {
+        "wp_number": 219,
+        "name": "GNSSA-03_round_9",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.843,
+          48.71482
+        ]
+      },
+      "properties": {
+        "wp_number": 220,
+        "name": "GNSSA-03_toa_centre",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.84771,
+          48.70254
+        ]
+      },
+      "properties": {
+        "wp_number": 221,
+        "name": "GNSSA-03_outer_4",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.84902,
+          48.7023
+        ]
+      },
+      "properties": {
+        "wp_number": 222,
+        "name": "GNSSA-03_round_10",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.84869,
+          48.70317
+        ]
+      },
+      "properties": {
+        "wp_number": 223,
+        "name": "GNSSA-03_round_11",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.84738,
+          48.70342
+        ]
+      },
+      "properties": {
+        "wp_number": 224,
+        "name": "GNSSA-03_round_12",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.843,
+          48.71482
+        ]
+      },
+      "properties": {
+        "wp_number": 225,
+        "name": "GNSSA-03_toa_centre",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.85704,
+          48.71207
+        ]
+      },
+      "properties": {
+        "wp_number": 226,
+        "name": "GNSSA-03_outer_5",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.85803,
+          48.71269
+        ]
+      },
+      "properties": {
+        "wp_number": 227,
+        "name": "GNSSA-03_round_13",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.85673,
+          48.71295
+        ]
+      },
+      "properties": {
+        "wp_number": 228,
+        "name": "GNSSA-03_round_14",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.85574,
+          48.71233
+        ]
+      },
+      "properties": {
+        "wp_number": 229,
+        "name": "GNSSA-03_round_15",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.843,
+          48.71482
+        ]
+      },
+      "properties": {
+        "wp_number": 230,
+        "name": "GNSSA-03_toa_centre",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.857,
+          48.7234
+        ]
+      },
+      "properties": {
+        "wp_number": 231,
+        "name": "GNSSA-03_outer_6",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.8567,
+          48.72428
+        ]
+      },
+      "properties": {
+        "wp_number": 232,
+        "name": "GNSSA-03_round_16",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.85571,
+          48.72367
+        ]
+      },
+      "properties": {
+        "wp_number": 233,
+        "name": "GNSSA-03_round_17",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.85601,
+          48.72279
+        ]
+      },
+      "properties": {
+        "wp_number": 234,
+        "name": "GNSSA-03_round_18",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.843,
+          48.71482
+        ]
+      },
+      "properties": {
+        "wp_number": 235,
+        "name": "GNSSA-03_toa_centre",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.8427,
+          48.7157
+        ]
+      },
+      "properties": {
+        "wp_number": 236,
+        "name": "GNSSA-03_clover_1",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.84162,
+          48.71581
+        ]
+      },
+      "properties": {
+        "wp_number": 237,
+        "name": "GNSSA-03_clover_2",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.84171,
+          48.71509
+        ]
+      },
+      "properties": {
+        "wp_number": 238,
+        "name": "GNSSA-03_clover_3",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.84431,
+          48.71456
+        ]
+      },
+      "properties": {
+        "wp_number": 239,
+        "name": "GNSSA-03_clover_4",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.84499,
+          48.71513
+        ]
+      },
+      "properties": {
+        "wp_number": 240,
+        "name": "GNSSA-03_clover_5",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.844,
+          48.71543
+        ]
+      },
+      "properties": {
+        "wp_number": 241,
+        "name": "GNSSA-03_clover_6",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.84201,
+          48.7142
+        ]
+      },
+      "properties": {
+        "wp_number": 242,
+        "name": "GNSSA-03_clover_7",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.84243,
+          48.71352
+        ]
+      },
+      "properties": {
+        "wp_number": 243,
+        "name": "GNSSA-03_clover_8",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.84334,
+          48.71395
+        ]
+      },
+      "properties": {
+        "wp_number": 244,
+        "name": "GNSSA-03_clover_9",
+        "visible": true,
+        "status": "Sent"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -126.843,
+          48.71482
+        ]
+      },
+      "properties": {
+        "wp_number": 245,
+        "name": "GNSSA-03_toa_centre",
+        "visible": true,
+        "status": "Sent"
+      }
+    }
+  ]
+}
