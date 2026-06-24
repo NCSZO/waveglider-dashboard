@@ -7,13 +7,17 @@ import cableRoute from '../assets/cable-route.geojson'
 const props = defineProps({
   history:   { type: Array,  default: () => [] },
   waypoints: { type: Array,  default: () => [] },
-  latest:    { type: Object, default: null }
+  latest:    { type: Object, default: null },
+  hoverTime: { type: Number, default: null }   // epoch ms, or null
 })
 
 const mapEl = ref(null)
 let map    = null
 let marker = null
 let loaded = false
+
+const HOVER_TOLERANCE_MS = 20 * 60_000   // 20 min
+const EMPTY_FC = { type: 'FeatureCollection', features: [] }
 
 const GMRT_TILE =
   'https://www.gmrt.org/services/mapserver/wms_merc?' +
@@ -91,9 +95,50 @@ function fitTrack() {
   )
 }
 
+function syncHover() {
+  if (!loaded) return
+  const src = map.getSource('hover-point')
+  if (!src) return
+
+  const t = props.hoverTime
+  if (t == null) { src.setData(EMPTY_FC); return }
+
+  // Binary search for nearest history row by glider_timestamp
+  const hist = props.history
+  if (hist.length === 0) { src.setData(EMPTY_FC); return }
+
+  let lo = 0, hi = hist.length - 1
+  while (lo < hi) {
+    const mid = (lo + hi) >> 1
+    if (new Date(hist[mid].glider_timestamp).getTime() < t) lo = mid + 1
+    else hi = mid
+  }
+  const candidates = [lo > 0 ? lo - 1 : null, lo < hist.length ? lo : null]
+  let best = null, bestDist = Infinity
+  for (const idx of candidates) {
+    if (idx == null) continue
+    const d = Math.abs(new Date(hist[idx].glider_timestamp).getTime() - t)
+    if (d < bestDist) { bestDist = d; best = hist[idx] }
+  }
+
+  if (!best || bestDist > HOVER_TOLERANCE_MS) { src.setData(EMPTY_FC); return }
+
+  src.setData({
+    type: 'FeatureCollection',
+    features: [{
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [Number(best.longitude), Number(best.latitude)]
+      }
+    }]
+  })
+}
+
 watch(() => props.history,   () => { syncTrack(); syncMarker() })
 watch(() => props.waypoints, () => syncWaypoints())
 watch(() => props.latest,    () => { syncMarker(); syncWaypoints() })
+watch(() => props.hoverTime, syncHover)
 
 onMounted(() => {
   map = new maplibregl.Map({
@@ -151,6 +196,21 @@ onMounted(() => {
       type: 'line',
       source: 'track',
       paint: { 'line-color': '#4fc3f7', 'line-width': 2, 'line-opacity': 0.9 }
+    })
+
+    // ── Hover position dot ────────────────────────────────────────
+    map.addSource('hover-point', { type: 'geojson', data: EMPTY_FC })
+    map.addLayer({
+      id: 'hover-dot',
+      type: 'circle',
+      source: 'hover-point',
+      paint: {
+        'circle-color':        '#4fc3f7',
+        'circle-radius':       7,
+        'circle-stroke-color': '#ffffff',
+        'circle-stroke-width': 2,
+        'circle-opacity':      0.9
+      }
     })
 
     // ── Waypoints ────────────────────────────────────────────────

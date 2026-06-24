@@ -12,6 +12,7 @@ const battery   = ref([])
 const waypoints = ref([])
 const mission   = ref(null)
 const error     = ref(null)
+const hoverTime = ref(null)   // epoch ms shared across all charts + map; null when no hover
 
 const STALE_MS = 15 * 60_000
 
@@ -107,16 +108,21 @@ const tempDs = computed(() => [
 
     <main class="main-layout">
       <section class="map-section">
-        <MapView :history="history" :waypoints="waypoints" :latest="latest" />
+        <MapView :history="history" :waypoints="waypoints" :latest="latest"
+                 :hover-time="hoverTime" />
       </section>
 
       <section class="panel-section">
         <StatusCard :latest="latest" :staleness="staleness" :waypoints="waypoints" />
 
-        <TimeSeries title="Battery"           unit="Wh"  :datasets="batteryDs" />
-        <TimeSeries title="Power flow"        unit="W"   :datasets="powerDs"   :showLegend="true" />
-        <TimeSeries title="Speed over ground" unit="kts" :datasets="speedDs"   :yMin="0" />
-        <TimeSeries title="Surface temp"      unit="°C"  :datasets="tempDs" />
+        <TimeSeries title="Battery"           unit="Wh"  :datasets="batteryDs"
+                    :hover-time="hoverTime" @hover="hoverTime = $event" />
+        <TimeSeries title="Power flow"        unit="W"   :datasets="powerDs"   :showLegend="true"
+                    :hover-time="hoverTime" @hover="hoverTime = $event" />
+        <TimeSeries title="Speed over ground" unit="kts" :datasets="speedDs"   :yMin="0"
+                    :hover-time="hoverTime" @hover="hoverTime = $event" />
+        <TimeSeries title="Surface temp"      unit="°C"  :datasets="tempDs"
+                    :hover-time="hoverTime" @hover="hoverTime = $event" />
       </section>
     </main>
 
