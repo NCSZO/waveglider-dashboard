@@ -8,7 +8,8 @@ const props = defineProps({
   history:   { type: Array,  default: () => [] },
   waypoints: { type: Array,  default: () => [] },
   latest:    { type: Object, default: null },
-  hoverTime: { type: Number, default: null }   // epoch ms, or null
+  hoverTime: { type: Number, default: null },   // epoch ms, or null
+  tailHours: { type: Number, default: 24 }      // fading tail window in hours; Infinity = whole
 })
 
 const mapEl = ref(null)
@@ -18,6 +19,7 @@ let loaded = false
 
 const HOVER_TOLERANCE_MS = 20 * 60_000   // 20 min
 const EMPTY_FC = { type: 'FeatureCollection', features: [] }
+const EMPTY_LINE = { type: 'Feature', geometry: { type: 'LineString', coordinates: [] } }
 
 const GMRT_TILE =
   'https://www.gmrt.org/services/mapserver/wms_merc?' +
@@ -25,13 +27,46 @@ const GMRT_TILE =
   '&TRANSPARENT=false&LAYERS=topo&CRS=EPSG:3857&STYLES=' +
   '&WIDTH=256&HEIGHT=256&BBOX={bbox-epsg-3857}'
 
-const trackGeoJSON = computed(() => ({
+// ── Track GeoJSON helpers ─────────────────────────────────────────────────
+
+// Full decimated mission track — used for the faint background line.
+const trackBgGeoJSON = computed(() => ({
   type: 'Feature',
   geometry: {
     type: 'LineString',
     coordinates: props.history.map(t => [Number(t.longitude), Number(t.latitude)])
   }
 }))
+
+// Recent tail — points within tailHours of the latest report.
+// Coordinates are ascending (oldest→newest), so line-progress 0 = oldest = faded,
+// line-progress 1 = newest = bright.
+const trackTailGeoJSON = computed(() => {
+  const hist = props.history
+  if (!hist.length) return EMPTY_LINE
+
+  let cutoff
+  if (!isFinite(props.tailHours)) {
+    cutoff = -Infinity
+  } else {
+    const latestTs = props.latest
+      ? new Date(props.latest.glider_timestamp).getTime()
+      : new Date(hist[hist.length - 1].glider_timestamp).getTime()
+    cutoff = latestTs - props.tailHours * 3_600_000
+  }
+
+  const tail = hist.filter(t => new Date(t.glider_timestamp).getTime() >= cutoff)
+  // Always include at least the last 2 points so the tail has a line even at narrow windows
+  const pts = tail.length >= 2 ? tail : hist.slice(-2)
+
+  return {
+    type: 'Feature',
+    geometry: {
+      type: 'LineString',
+      coordinates: pts.map(t => [Number(t.longitude), Number(t.latitude)])
+    }
+  }
+})
 
 const targetWp = computed(() => props.latest?.target_waypoint ?? -1)
 
@@ -56,7 +91,8 @@ function markerEl() {
 
 function syncTrack() {
   if (!loaded) return
-  map.getSource('track')?.setData(trackGeoJSON.value)
+  map.getSource('track-bg')?.setData(trackBgGeoJSON.value)
+  map.getSource('track-tail')?.setData(trackTailGeoJSON.value)
 }
 
 function notTarget(extra) {
@@ -136,6 +172,7 @@ function syncHover() {
 }
 
 watch(() => props.history,   () => { syncTrack(); syncMarker() })
+watch(() => props.tailHours, () => syncTrack())
 watch(() => props.waypoints, () => syncWaypoints())
 watch(() => props.latest,    () => { syncMarker(); syncWaypoints() })
 watch(() => props.hoverTime, syncHover)
@@ -189,13 +226,41 @@ onMounted(() => {
       }
     })
 
-    // ── Glider track ─────────────────────────────────────────────
-    map.addSource('track', { type: 'geojson', data: trackGeoJSON.value })
+    // ── Glider track — background (full mission, faint) ───────────
+    map.addSource('track-bg', { type: 'geojson', data: trackBgGeoJSON.value })
     map.addLayer({
-      id: 'track-line',
+      id: 'track-bg-line',
       type: 'line',
-      source: 'track',
-      paint: { 'line-color': '#4fc3f7', 'line-width': 2, 'line-opacity': 0.9 }
+      source: 'track-bg',
+      paint: {
+        'line-color':   '#4fc3f7',
+        'line-width':   1.5,
+        'line-opacity': 0.22
+      }
+    })
+
+    // ── Glider track — fading tail (recent, full-res, gradient) ──
+    // lineMetrics: true is required for the line-gradient expression.
+    map.addSource('track-tail', {
+      type: 'geojson',
+      data: trackTailGeoJSON.value,
+      lineMetrics: true
+    })
+    map.addLayer({
+      id: 'track-tail-line',
+      type: 'line',
+      source: 'track-tail',
+      layout: { 'line-cap': 'round', 'line-join': 'round' },
+      paint: {
+        // line-progress 0 = oldest end (transparent), 1 = newest/head (bright)
+        'line-gradient': [
+          'interpolate', ['linear'], ['line-progress'],
+          0,   'rgba(79, 195, 247, 0)',
+          0.4, 'rgba(79, 195, 247, 0.35)',
+          1,   'rgba(79, 195, 247, 1)'
+        ],
+        'line-width': 3
+      }
     })
 
     // ── Hover position dot ────────────────────────────────────────
@@ -244,7 +309,7 @@ onMounted(() => {
       }
     })
 
-    // WP 180+: per-station survey track points, subtle
+    // WP 180+: per-station survey track points (current site only), subtle
     map.addLayer({
       id: 'wp-survey',
       type: 'circle',
