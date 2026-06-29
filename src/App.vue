@@ -5,6 +5,7 @@ import { haversineMeters } from './lib/geo.js'
 import MapView     from './components/MapView.vue'
 import StatusCard  from './components/StatusCard.vue'
 import TimeSeries  from './components/TimeSeries.vue'
+import RosePlot    from './components/RosePlot.vue'
 import Attribution from './components/Attribution.vue'
 
 const latest       = ref(null)
@@ -108,6 +109,21 @@ function lineDs(label, data, color, fill = false) {
   }
 }
 
+// Latest battery_status row for the status card (history is ascending → last = newest)
+const latestBattery = computed(() => battery.value.at(-1) ?? null)
+
+// Rose plot data: all history points with valid speed, preserving both heading fields
+const roseData = computed(() =>
+  history.value
+    .filter(r => r.speed_over_ground_kts != null)
+    .map(r => ({
+      heading:        r.heading,
+      desiredBearing: r.desired_bearing,
+      speed:          Number(r.speed_over_ground_kts),
+      time:           new Date(r.glider_timestamp).getTime()
+    }))
+)
+
 const batteryDs = computed(() => [
   lineDs('Battery (Wh)',
     battery.value.map(r => ({ x: new Date(r.timestamp), y: r.battery_wh != null ? Number(r.battery_wh) : null })),
@@ -174,7 +190,8 @@ const TAIL_OPTIONS = [
       </section>
 
       <section class="panel-section">
-        <StatusCard :latest="latest" :staleness="staleness" :waypoints="effectiveWaypoints" />
+        <StatusCard :latest="latest" :staleness="staleness" :waypoints="effectiveWaypoints"
+                    :battery="latestBattery" />
 
         <TimeSeries title="Battery"           unit="Wh"  :datasets="batteryDs"
                     :hover-time="hoverTime" @hover="hoverTime = $event" />
@@ -182,6 +199,7 @@ const TAIL_OPTIONS = [
                     :hover-time="hoverTime" @hover="hoverTime = $event" />
         <TimeSeries title="Speed over ground" unit="kts" :datasets="speedDs"   :yMin="0"
                     :hover-time="hoverTime" @hover="hoverTime = $event" />
+        <RosePlot :points="roseData" :tail-hours="tailHours" />
         <TimeSeries title="Surface temp"      unit="°C"  :datasets="tempDs"
                     :hover-time="hoverTime" @hover="hoverTime = $event" />
       </section>

@@ -5,7 +5,8 @@ import { haversineMeters, etaSeconds, formatDuration } from '../lib/geo.js'
 const props = defineProps({
   latest:    { type: Object, default: null },
   staleness: { type: String, default: 'unknown' },
-  waypoints: { type: Array,  default: () => [] }
+  waypoints: { type: Array,  default: () => [] },
+  battery:   { type: Object, default: null }   // latest battery_status row
 })
 
 const ALARM_LABELS = [
@@ -72,6 +73,21 @@ function fmtLng(v) {
 function fmtNum(v, dp = 2) {
   return v != null ? Number(v).toFixed(dp) : '—'
 }
+// mW → W string
+function fmtPwr(mw) {
+  return mw != null ? `${(Number(mw) / 1000).toFixed(1)} W` : '—'
+}
+// mW → W with explicit +/- sign for charge direction
+function fmtCharge(mw) {
+  if (mw == null) return '—'
+  const w = Number(mw) / 1000
+  return `${w >= 0 ? '+' : ''}${w.toFixed(1)} W`
+}
+const chargeClass = computed(() => {
+  const mw = props.battery?.charge_mw
+  if (mw == null) return ''
+  return Number(mw) >= 0 ? 'pwr-pos' : 'pwr-neg'
+})
 </script>
 
 <template>
@@ -89,6 +105,26 @@ function fmtNum(v, dp = 2) {
         <div><div class="label">Lng</div><div class="val">{{ fmtLng(latest.longitude) }}</div></div>
         <div><div class="label">Heading</div><div class="val">{{ latest.heading ?? '—' }}°</div></div>
         <div><div class="label">Speed (SOG)</div><div class="val">{{ fmtNum(latest.speed_over_ground_kts) }} kts</div></div>
+      </div>
+
+      <!-- battery + power flow -->
+      <div v-if="battery" class="grid2">
+        <div>
+          <div class="label">Battery</div>
+          <div class="val">{{ fmtNum(battery.battery_wh, 0) }} Wh</div>
+        </div>
+        <div>
+          <div class="label">Solar</div>
+          <div class="val pwr-solar">{{ fmtPwr(battery.solar_mw) }}</div>
+        </div>
+        <div>
+          <div class="label">Output</div>
+          <div class="val pwr-output">{{ fmtPwr(battery.output_mw) }}</div>
+        </div>
+        <div>
+          <div class="label">Charge</div>
+          <div class="val" :class="chargeClass">{{ fmtCharge(battery.charge_mw) }}</div>
+        </div>
       </div>
 
       <!-- distance + ETA -->
@@ -152,6 +188,12 @@ function fmtNum(v, dp = 2) {
   border-radius: 4px;
   letter-spacing: 0.03em;
 }
-.all-clear { font-size: 0.78rem; color: var(--ok); }
-.loading   { font-size: 0.8rem; color: var(--text-muted); }
+.all-clear  { font-size: 0.78rem; color: var(--ok); }
+.loading    { font-size: 0.8rem; color: var(--text-muted); }
+
+/* Power flow colors — match the Power flow chart series */
+.pwr-solar  { color: #fdd835; }
+.pwr-output { color: #ef5350; }
+.pwr-pos    { color: #66bb6a; }
+.pwr-neg    { color: #ef5350; }
 </style>
